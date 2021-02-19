@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1734635026340756660}
   - component: {fileID: 5134607396116575401}
   m_Layer: 0
-  m_Name: Cube.002
+  m_Name: HDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,11 +58,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 3fafe518d9bb4f74db2575ae0f1a8210, type: 3}
-  - {fileID: 9185737683893222716, guid: 3fafe518d9bb4f74db2575ae0f1a8210, type: 3}
-  - {fileID: -6087771358165109452, guid: 3fafe518d9bb4f74db2575ae0f1a8210, type: 3}
-  - {fileID: -3846018093981099296, guid: 3fafe518d9bb4f74db2575ae0f1a8210, type: 3}
-  - {fileID: -6922793697723135513, guid: 3fafe518d9bb4f74db2575ae0f1a8210, type: 3}
+  - {fileID: 2100000, guid: fad1eadf5b103e94ebbe02490afe0503, type: 2}
+  - {fileID: 2100000, guid: 34813b3c0ab801b4b910b9455962029d, type: 2}
+  - {fileID: 2100000, guid: 2de8496e35215d249b64eb9bfe9ed4ef, type: 2}
+  - {fileID: 620895872489589821, guid: 043c94ffccff3554f8ff08164c6c4b29, type: 3}
+  - {fileID: 2100000, guid: eb837f621778eb443be0269b165d237b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
