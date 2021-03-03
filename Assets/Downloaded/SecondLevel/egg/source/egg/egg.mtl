@@ -1,0 +1,9 @@
+newmtl Family_01_S1andFamily_01_S3andFamily_01_S4andFamily_01_S5andFamily_01_S6andFamily_01_S7andFamily_01_S8andFamily_01_S9andFamily_02_S1andFamily_03_S1andFamily_04_S1andFamily_05_S1
+Ka 0.100000 0.100000 0.402000
+Kd 0.470600 0.784300 1.000000
+Ks 0.564700 0.749000 0.996100
+illum 0
+map_Ka egg.jpg
+map_Kd egg.jpg
+map_Ks egg.jpg
+
