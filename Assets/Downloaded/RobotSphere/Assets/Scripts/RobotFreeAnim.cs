@@ -7,18 +7,21 @@ public class RobotFreeAnim : MonoBehaviour {
 	Vector3 rot = Vector3.zero;
 	float rotSpeed = 40f;
 	Animator anim;
+    Transform player;
 
 	// Use this for initialization
 	void Awake()
 	{
 		anim = gameObject.GetComponent<Animator>();
-		//gameObject.transform.eulerAngles = rot;
-	}
+        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        //gameObject.transform.eulerAngles = rot;
+    }
 
 	// Update is called once per frame
 	void Update()
 	{
 		CheckKey();
+        transform.LookAt(player);
 		//gameObject.transform.eulerAngles = rot;
 	}
 
