@@ -65,6 +65,14 @@ public class Stream : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
 
         Physics.Raycast(ray, out hit, 2.0f);
+        if(hit.collider.tag == "Mix")
+        {
+            Spill.instance.StartTimer = true;
+        }
+        else
+        {
+            Spill.instance.StartTimer = false;
+        }
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(2.0f);
 
         return endPoint;

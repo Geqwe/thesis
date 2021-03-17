@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Spill : MonoBehaviour
 {
+    public static Spill instance;
     public int pourThreshold = 15;
     public Transform origin = null;
     public GameObject streamPrefab = null;
 
     bool isPouring = false;
     Stream currentStream = null;
+
+    float timeLeft = 5f;
+    bool hasPoured = false;
+    public GameObject mix;
+    public Material mat;
+    public Material yellowMat;
+    public bool StartTimer = false;
+
+    private void Awake()
+    {
+        instance = this;
+        mix.GetComponent<MeshRenderer>().material = mat;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +43,27 @@ public class Spill : MonoBehaviour
                 EndPour();
             }
         }
+
+        if (hasPoured)
+            return;
+        if (!StartTimer)
+            return;
+
+        if (isPouring)
+        {
+            CountPour();
+        }
+    }
+
+    void CountPour()
+    {
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0f)
+        {
+            mix.GetComponent<MeshRenderer>().material = yellowMat;
+            hasPoured = true;
+        }
+        Debug.Log(timeLeft);
     }
 
     void StartPour()
@@ -36,6 +71,8 @@ public class Spill : MonoBehaviour
         Debug.Log("start");
         currentStream = CreateStream();
         currentStream.Begin();
+
+        
     }
 
     void EndPour()
@@ -43,6 +80,7 @@ public class Spill : MonoBehaviour
         Debug.Log("end");
         currentStream.End();
         currentStream = null;
+        StartTimer = false;
     }
 
     float CalculatePourAngle()
