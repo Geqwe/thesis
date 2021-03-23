@@ -4,28 +4,36 @@ using UnityEngine.UI;
 
 public class PickupItem : MonoBehaviour
 {
+    public int level;
     public AudioClip[] clips;
     public Text adviceText;
     public struct Item
     {
+        public bool visited;
         public string description;
         public AudioClip clip;
         public Item(string desc, AudioClip cli)
         {
+            visited = false;
             description = desc;
             clip = cli;
         }
     }
+
+    int allVisited = 0;
 
     Dictionary<string, Item> items = new Dictionary<string, Item>();
 
     // Start is called before the first frame update
     void Awake()
     {
-        InitDictionary();
+        if (level == 1)
+            InitFirstDictionary();
+        else
+            InitSecondDictionary();
     }
 
-    void InitDictionary()
+    void InitFirstDictionary()
     {
         Item toInsert = new Item("A computer case is the enclosure that contains most of the components of a personal computer.", clips[0]);
         items.Add("Case", toInsert);
@@ -47,6 +55,14 @@ public class PickupItem : MonoBehaviour
         items.Add("GPU", toInsert);
     }
 
+    void InitSecondDictionary()
+    {
+        Item toInsert = new Item("A switch is a hardware device that connects multiple devices on a computer network.", clips[0]);
+        items.Add("Switch", toInsert);
+        toInsert = ChangeItem("A router is a hardware device which is used to connect a LAN with an internet connection. It is used to receive, analyze and forward the incoming packets to another network.", clips[1], toInsert);
+        items.Add("Router", toInsert);
+    }
+
     Item ChangeItem(string str, AudioClip clip, Item toIns)
     {
         toIns.description = str;
@@ -58,5 +74,15 @@ public class PickupItem : MonoBehaviour
     {
         Item itemPicked = items[itemName];
         adviceText.text = itemPicked.description;
+        //play clip
+        if(!itemPicked.visited)
+        {
+            itemPicked.visited = true;
+            allVisited++;
+            if(allVisited==items.Count)
+            {
+                //start quiz
+            }
+        }
     }
 }
