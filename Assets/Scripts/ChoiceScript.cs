@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChoiceScript : MonoBehaviour
 {
@@ -47,9 +48,15 @@ public class ChoiceScript : MonoBehaviour
         questions.Add(q);
         q = NewQuestion("Which component is responsible for executing instructions that make up computer programs?", false, q, "RAM", "SSD", "CPU", false, false, true);
         questions.Add(q);
-        q = NewQuestion("Which of these components is responsible for supplying other components with power?", false, q, "Power Supply", "Video Card", "RAM", true, false, false);
+        q = NewQuestion("Which of these components is responsible for supplying other components with power?", false, q, "Power Supply", "Video Card", "Motherboard", true, false, false);
         questions.Add(q);
         q = NewQuestion("Which of these components can read and write data faster?", false, q, "SSD", "Video Card", "HDD", true, false, false);
+        questions.Add(q);
+        q = NewQuestion("Which component is the enclosure that contains most of the components of a personal computer?", false, q, "Case", "HDD", "RAM", true, false, false);
+        questions.Add(q);
+        q = NewQuestion("Which component is the main circuit board of a computer and makes everything work together?", false, q, "Video Card", "Motherboard", "Power Supply", false, true, false);
+        questions.Add(q);
+        q = NewQuestion("Which component provides input and output of audio signals to and from a computer?", false, q, "Sound Card", "Case", "RAM", true, false, false);
         questions.Add(q);
         questionsLeft = questions;
         questionCounter = questions.Count;
@@ -68,7 +75,7 @@ public class ChoiceScript : MonoBehaviour
         ch = ChangeChoice(ch3, cho3, ch);
         options[2] = ch;
         
-        Debug.Log(options[2].ans);
+        //Debug.Log(options[2].ans);
         q.choices = new List<Choice>(new Choice[3]);
         for (int i=0;i<3;i++)
         {
@@ -114,23 +121,29 @@ public class ChoiceScript : MonoBehaviour
             //green box or sound
             questionCounter--;
             questionsLeft.Remove(currQ);
-            Debug.Log("Correct questions left: " + questionCounter);
+            //Debug.Log("Correct questions left: " + questionCounter);
             if (questionCounter == 0)
             {
                 checkEndQuiz = true;
-                Debug.Log(checkEndQuiz + " end ");
+                StartCoroutine(ToTest());
+                //Debug.Log(checkEndQuiz + " end ");
                 return;
             }
             NextQuestion();
-
-            
         }
         else
         {
             // red box or sound
-            Debug.Log("Wrong");
+            //Debug.Log("Wrong");
             NextQuestion();
         }
         
+    }
+
+    IEnumerator ToTest()
+    {
+        //dialogue trigger
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(2);
     }
 }

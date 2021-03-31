@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class TestManager : MonoBehaviour
 {
@@ -15,20 +17,20 @@ public class TestManager : MonoBehaviour
     bool gameOver = false;
 
     public Text hint;
+    public Text errors;
 
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
-        NextItem();
+        StartCoroutine(FirstItem());
     }
 
     public void NextItem()
     {
-        Debug.Log("Next Item");
         if (index == 8)
         {
-            Debug.Log("You win!");
+            StartCoroutine(GameWin());
             return;
         }
         hint.text = hints[index];
@@ -37,7 +39,6 @@ public class TestManager : MonoBehaviour
 
     public void WrongItem()
     {
-        Debug.Log("Wrong Item");
         if (gameOver)
             return;
         if(wrongAnswers==1)
@@ -46,11 +47,34 @@ public class TestManager : MonoBehaviour
             return;
         }
         wrongAnswers--;
+        errors.text = wrongAnswers.ToString();
     }
 
     void GameOver()
     {
         Debug.Log("Game over");
         gameOver = true;
+        StartCoroutine(GameRestart());
+    }
+
+    IEnumerator FirstItem()
+    {
+        //dialogue trigger
+        yield return new WaitForSeconds(5f);
+        NextItem();
+    }
+
+    IEnumerator GameRestart()
+    {
+        //dialogue trigger
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(2);
+    }
+
+    IEnumerator GameWin()
+    {
+        //dialogue trigger
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(0);
     }
 }

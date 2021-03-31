@@ -62,6 +62,7 @@ public class Spill : MonoBehaviour
         {
             mix.GetComponent<MeshRenderer>().material = yellowMat;
             hasPoured = true;
+            Mix.instance.MilkNextTrigger();
         }
         Debug.Log(timeLeft);
     }
@@ -71,8 +72,6 @@ public class Spill : MonoBehaviour
         Debug.Log("start");
         currentStream = CreateStream();
         currentStream.Begin();
-
-        
     }
 
     void EndPour()

@@ -47,6 +47,7 @@ public class VRInputModule : BaseInputModule
 
     private void ProcessPress(PointerEventData data)
     {
+        Debug.Log("press");
         data.pointerCurrentRaycast = data.pointerCurrentRaycast;
 
         GameObject newPointerPress = ExecuteEvents.ExecuteHierarchy(m_CurrentObject, data, ExecuteEvents.pointerDownHandler);
@@ -61,6 +62,7 @@ public class VRInputModule : BaseInputModule
 
     private void ProcessRelease(PointerEventData data)
     {
+        Debug.Log("release");
         ExecuteEvents.Execute(data.pointerPress, data, ExecuteEvents.pointerUpHandler);
 
         GameObject pointerUpHandler = ExecuteEvents.GetEventHandler<IPointerClickHandler>(m_CurrentObject);

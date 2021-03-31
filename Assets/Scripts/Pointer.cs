@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Pointer : MonoBehaviour
 {
-    float length = 30.0f;
+    float length = 50.0f;
     public GameObject dot;
     public VRInputModule inputModule;
 
@@ -27,7 +27,7 @@ public class Pointer : MonoBehaviour
         float targetLength = data.pointerCurrentRaycast.distance == 0 ? length : data.pointerCurrentRaycast.distance;
 
         RaycastHit hit = CreateRaycast();
-        Vector3 endPos = transform.position + (-transform.forward * length);
+        Vector3 endPos = transform.position + (transform.forward * length);
         if (hit.collider != null)
             endPos = hit.point;
         dot.transform.position = endPos;
@@ -40,6 +40,7 @@ public class Pointer : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(transform.position, transform.forward);
         Physics.Raycast(ray, out hit, length);
+        Debug.Log(hit.transform.name);
         return hit;
     }
 }

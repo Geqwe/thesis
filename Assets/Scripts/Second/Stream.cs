@@ -58,20 +58,27 @@ public class Stream : MonoBehaviour
 
         Destroy(gameObject);
     }
-    
+
     Vector3 FindEndPoint()
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
 
         Physics.Raycast(ray, out hit, 2.0f);
-        if(hit.collider.tag == "Mix")
+        if (Mix.instance.waitingMilk)
         {
-            Spill.instance.StartTimer = true;
+            if (hit.collider.tag == "Mix")
+            {
+                Spill.instance.StartTimer = true;
+            }
+            else
+            {
+                Spill.instance.StartTimer = false;
+            }
         }
         else
         {
-            Spill.instance.StartTimer = false;
+            //play sound wrong milk
         }
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(2.0f);
 

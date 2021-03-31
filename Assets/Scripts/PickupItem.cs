@@ -7,6 +7,7 @@ public class PickupItem : MonoBehaviour
     public int level;
     public AudioClip[] clips;
     public Text adviceText;
+    public GameObject btn2;
     public struct Item
     {
         public bool visited;
@@ -81,7 +82,7 @@ public class PickupItem : MonoBehaviour
             allVisited++;
             if(allVisited==items.Count)
             {
-                //start quiz
+                btn2.SetActive(true);
             }
         }
     }
