@@ -1,11 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Mix : MonoBehaviour
 {
     public static Mix instance;
+
+    [SerializeField] Light spotLight;
 
     bool waitingSugar = true;
     bool waitingEggs = false;
@@ -54,6 +55,7 @@ public class Mix : MonoBehaviour
         if(other.name.StartsWith("eggBr"))
         {
             Debug.Log("eggs destroy");
+            Destroy(other);
             if (waitingEggs)
             {
                 eggs--;
@@ -62,10 +64,9 @@ public class Mix : MonoBehaviour
                 {
                     Debug.Log("all eggs in");
                     waitingEggs = false;
-                    waitingMilk = true;
                     if(firstTime)
                     {
-                        ResetValues();
+                        StartCoroutine(ResetValues());
                     }
                     else
                     {
@@ -78,7 +79,7 @@ public class Mix : MonoBehaviour
             {
                 //play sound wrong
             }
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
             return;
         }
     }
@@ -89,16 +90,22 @@ public class Mix : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    void ResetValues()
+    IEnumerator ResetValues()
     {
-        //change the light
         sugarCubes = 1;
         eggs = 3;
         waitingSugar = true;
+        firstTime = false;
+        yield return new WaitForSeconds(7f);
+        Spill.instance.ResetMilk();
+        triggers[index++].enabled = true;
+        spotLight.color = new Color(255f / 255f, 116f / 255f, 66f / 255f);
     }
 
     public void MilkNextTrigger()
     {
         triggers[index++].enabled = true;
+        waitingMilk = false;
+        waitingEggs = true;
     }
 }

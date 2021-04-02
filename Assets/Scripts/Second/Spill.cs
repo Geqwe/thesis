@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Spill : MonoBehaviour
 {
@@ -91,5 +89,12 @@ public class Spill : MonoBehaviour
     {
         GameObject streamObj = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
         return streamObj.GetComponent<Stream>();
+    }
+
+    public void ResetMilk()
+    {
+        timeLeft = 5f;
+        mix.GetComponent<MeshRenderer>().material = mat;
+        hasPoured = false;
     }
 }

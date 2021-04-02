@@ -974,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.707
+      value: 0.977
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3830,8 +3830,8 @@ MonoBehaviour:
 
       2 eggs
 
-      Half a carton
-      of milk'
+      Half a carton of
+      milk'
     - The ingredients can be matched to an algorithmic term called assignment statements.
     - 'They look like this:
 
@@ -3839,8 +3839,8 @@ MonoBehaviour:
       flour <- 1 cup
 
 
-      sugar <- 2 cubes (if
-      they are sweet pancakes)
+      sugar <- 2 cubes (if they
+      are sweet pancakes)
 
 
       salt <- 1 pinch (if they are salty pancakes)
@@ -4053,13 +4053,13 @@ MonoBehaviour:
 
       sugar <- 1 cube (if they are sweet pancakes)
 
-      salt
-      <- 1 pinch (if they are salty pancakes)
+      salt <-
+      1 pinch (if they are salty pancakes)
 
       eggs <- 3
 
-      milk <- half
-      a carton'
+      milk <- half a
+      carton'
 --- !u!114 &688391502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,13 +4087,13 @@ MonoBehaviour:
 
       sugar <- 1 cube (if they are sweet pancakes)
 
-      salt
-      <- 1 pinch (if they are salty pancakes)
+      salt <-
+      1 pinch (if they are salty pancakes)
 
       eggs <- 3
 
-      milk <- half
-      a carton'
+      milk <- half a
+      carton'
 --- !u!114 &688391503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4842,17 +4842,17 @@ PrefabInstance:
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.993
+      value: -1.028
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.565
+      value: 0.863
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.095
+      value: -2.047
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
@@ -4897,12 +4897,12 @@ PrefabInstance:
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
@@ -4924,7 +4924,7 @@ PrefabInstance:
     - target: {fileID: 7648999437520528501, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437534674345, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
@@ -8038,7 +8038,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.8, z: 0}
 --- !u!23 &1859327881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8098,6 +8098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22f0e0534c20e04998b88b7695dbe9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotLight: {fileID: 1065128590}
   waitingMilk: 0
   DialogueManager: {fileID: 688391493}
 --- !u!1001 &1895613825

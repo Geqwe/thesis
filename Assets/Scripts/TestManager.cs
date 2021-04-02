@@ -59,21 +59,20 @@ public class TestManager : MonoBehaviour
 
     IEnumerator FirstItem()
     {
-        //dialogue trigger
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         NextItem();
     }
 
     IEnumerator GameRestart()
     {
-        //dialogue trigger
+        GetComponents<DialogueTrigger>()[1].enabled = true;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(2);
     }
 
     IEnumerator GameWin()
     {
-        //dialogue trigger
+        GetComponents<DialogueTrigger>()[0].enabled = true;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }

@@ -635,6 +635,7 @@ namespace Valve.VR.InteractionSystem
 
                     if (attachedObjects[index].attachedObject != null)
                     {
+                        //if(!attachedObjects[index].attachedObject.transform.name.StartsWith("egg"))
                         attachedObjects[index].attachedObject.transform.parent = parentTransform;
                     }
                 }

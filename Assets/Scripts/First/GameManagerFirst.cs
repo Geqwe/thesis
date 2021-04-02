@@ -6,20 +6,18 @@ public class GameManagerFirst : MonoBehaviour
 
     public GameObject desktop;
     public GameObject partsAlone;
-    public GameObject btn1, btn2, quiz, title, body;
+    public GameObject btn2, quiz, title, body;
 
     // Start is called before the first frame update
     void Awake()
     {
-        //instance = this;
+        instance = this;
     }
 
     public void ChangeDesktopToParts()
     {
         desktop.SetActive(false);
         partsAlone.SetActive(true);
-        //dialogue trigger
-        btn1.SetActive(false);
     }
 
     public void ChangeToQuiz()
@@ -28,6 +26,5 @@ public class GameManagerFirst : MonoBehaviour
         quiz.SetActive(true);
         title.SetActive(true);
         body.SetActive(true);
-        //dialogue trigger
     }
 }

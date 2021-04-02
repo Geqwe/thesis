@@ -33,10 +33,28 @@ public class ChoiceScript : MonoBehaviour
 
     public Text desc, choice1, choice2, choice3;
 
+    public GameObject answerLight;
+    public Material def, green, red;
+    MeshRenderer meshRenderer;
+    Material[] reds, greens, defs;
+
     // Start is called before the first frame update
     void Awake()
     {
         InitQuiz();
+        InitMaterials();
+    }
+
+    void InitMaterials()
+    {
+        meshRenderer = answerLight.GetComponent<MeshRenderer>();
+        reds = meshRenderer.materials;
+        reds[1] = red;
+        greens = meshRenderer.materials;
+        greens[1] = green;
+        defs = meshRenderer.materials;
+        defs[1] = def;
+        meshRenderer.materials = defs;
     }
 
     void InitQuiz()
@@ -117,8 +135,9 @@ public class ChoiceScript : MonoBehaviour
             return;
 
         if(currQ.choices[index].correct)
-        {   
+        {
             //green box or sound
+            StartCoroutine(Correct());
             questionCounter--;
             questionsLeft.Remove(currQ);
             //Debug.Log("Correct questions left: " + questionCounter);
@@ -134,15 +153,29 @@ public class ChoiceScript : MonoBehaviour
         else
         {
             // red box or sound
-            //Debug.Log("Wrong");
+            StartCoroutine(Wrong());
             NextQuestion();
         }
         
     }
 
+    IEnumerator Correct()
+    {
+        meshRenderer.materials = greens;
+        yield return new WaitForSeconds(1f);
+        meshRenderer.materials = defs;
+    }
+
+    IEnumerator Wrong()
+    {
+        meshRenderer.materials = reds;
+        yield return new WaitForSeconds(1f);
+        meshRenderer.materials = defs;
+    }
+
     IEnumerator ToTest()
     {
-        //dialogue trigger
+        GetComponent<DialogueTrigger>().enabled = true;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(2);
     }
