@@ -24,6 +24,7 @@ public class PickupItem : MonoBehaviour
     int allVisited = 0;
 
     Dictionary<string, Item> items = new Dictionary<string, Item>();
+    AudioSource source;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,6 +33,8 @@ public class PickupItem : MonoBehaviour
             InitFirstDictionary();
         else
             InitSecondDictionary();
+
+        source = GetComponent<AudioSource>();
     }
 
     void InitFirstDictionary()
@@ -58,10 +61,14 @@ public class PickupItem : MonoBehaviour
 
     void InitSecondDictionary()
     {
-        Item toInsert = new Item("A switch is a hardware device that connects multiple devices on a computer network.", clips[0]);
+        Item toInsert = new Item("That's a switch. A switch is a hardware device that connects multiple devices, on a wired computer network, creating a LAN.", clips[0]);
         items.Add("Switch", toInsert);
-        toInsert = ChangeItem("A router is a hardware device which is used to connect a LAN with an internet connection. It is used to receive, analyze and forward the incoming packets to another network.", clips[1], toInsert);
+        toInsert = ChangeItem("That's a router. A router is responsible for sending and receiving (routing) data between networks. Most routers today work as Access Points too. ", clips[1], toInsert);
         items.Add("Router", toInsert);
+        toInsert = ChangeItem("That's an access point. An Access Point does the same job as the Switch, however with wireless connection with the devices. Wireless connectivity happens through electromagnetic waves. Most routers today work as access points too.", clips[2], toInsert);
+        items.Add("Access", toInsert);
+        toInsert = ChangeItem("That's an Network Interface Card.  A NIC is a component inside the computer that enables wired and wireless network connection.", clips[3], toInsert);
+        items.Add("NetCard", toInsert);
     }
 
     Item ChangeItem(string str, AudioClip clip, Item toIns)
@@ -73,9 +80,11 @@ public class PickupItem : MonoBehaviour
 
     public void GetItem(string itemName)
     {
+        if (source.isPlaying)
+            return;
         Item itemPicked = items[itemName];
         adviceText.text = itemPicked.description;
-        //play clip
+        //play clip if there was a previous add it to queue
         if(!itemPicked.visited)
         {
             itemPicked.visited = true;

@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if(SteamVR_Actions.default_GrabGrip.GetStateDown(SteamVR_Input_Sources.RightHand)) {
+        if(SteamVR_Actions.default_GrabGrip.GetStateDown(SteamVR_Input_Sources.RightHand) || SteamVR_Actions.default_GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand)) {
             DisplayNextSentence();
         }
     }
