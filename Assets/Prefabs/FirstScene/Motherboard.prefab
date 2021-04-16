@@ -49109,7 +49109,7 @@ GameObject:
   - component: {fileID: 4607552820787572461}
   - component: {fileID: 4607552820787572462}
   m_Layer: 0
-  m_Name: MotherboardA
+  m_Name: Motherboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

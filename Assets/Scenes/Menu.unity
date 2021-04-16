@@ -451,6 +451,84 @@ MonoBehaviour:
     sentence:
     - "Hello there! \nChoose the lesson you wish by pointing the laser onto it and
       pressing the trigger behind your controller."
+--- !u!1 &454746145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454746146}
+  - component: {fileID: 454746148}
+  - component: {fileID: 454746147}
+  m_Layer: 5
+  m_Name: BehindYou
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &454746146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454746145}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1760}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1044610973}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 64, y: 248}
+  m_SizeDelta: {x: 1500, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &454746147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454746145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5441177, b: 0.5441177, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Behind you
+--- !u!222 &454746148
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454746145}
+  m_CullTransparentMesh: 0
 --- !u!1 &479547455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,14 +1177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e6e87a1109d994ba023024d7d1d4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inpmod: {fileID: 1540346186}
-  point: {fileID: 2032757087}
---- !u!1 &1540346186 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3299572464510089233, guid: f33e836ec9e2ab24983cdb6faa53ae4f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6423081367499007812}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1544164297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,12 +1502,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025119658}
   m_CullTransparentMesh: 0
---- !u!1 &2032757087 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4679321820377161823, guid: 632909c9c8c07b947b4d508322effdfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094862197}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2094862197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1697,7 +1761,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6423081367499007812}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540346186}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d17714a7d041a994b9740e1c9f971e03, type: 3}

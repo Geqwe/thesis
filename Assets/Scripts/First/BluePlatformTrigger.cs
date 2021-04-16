@@ -16,6 +16,7 @@ public class BluePlatformTrigger : MonoBehaviour
     IEnumerator ChangeParts()
     {
         yield return new WaitForSeconds(10f);
+        PickupItem.instance.canPickUp = true;
         GameManagerFirst.instance.ChangeDesktopToParts();
     }
 }

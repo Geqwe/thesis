@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 9116201840385650955}
   - component: {fileID: 9116201840385650949}
   m_Layer: 0
-  m_Name: RAMA
+  m_Name: RAM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

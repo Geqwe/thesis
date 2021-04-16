@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class PickupItem : MonoBehaviour
 {
+    public static PickupItem instance;
+    public bool canPickUp = false;
+
     public int level;
     public AudioClip[] clips;
     public Text adviceText;
@@ -29,6 +32,7 @@ public class PickupItem : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        instance = this;
         if (level == 1)
             InitFirstDictionary();
         else
@@ -63,11 +67,11 @@ public class PickupItem : MonoBehaviour
     {
         Item toInsert = new Item("That's a switch. A switch is a hardware device that connects multiple devices, on a wired computer network, creating a LAN.", clips[0]);
         items.Add("Switch", toInsert);
-        toInsert = ChangeItem("That's a router. A router is responsible for sending and receiving (routing) data between networks. Most routers today work as Access Points too. ", clips[1], toInsert);
+        toInsert = ChangeItem("That's a router. A router is responsible for sending and receiving (routing) data between networks. Most routers today work as Access Points too.", clips[1], toInsert);
         items.Add("Router", toInsert);
-        toInsert = ChangeItem("That's an access point. An Access Point does the same job as the Switch, however with wireless connection with the devices. Wireless connectivity happens through electromagnetic waves. Most routers today work as access points too.", clips[2], toInsert);
+        toInsert = ChangeItem("That's an access point. An Access Point does the same job as the Switch, connecting devices creating a LAN, however with wireless connection with the devices. Wireless connectivity happens through electromagnetic waves. Most routers today work as access points too.", clips[2], toInsert);
         items.Add("Access", toInsert);
-        toInsert = ChangeItem("That's an Network Interface Card.  A NIC is a component inside the computer that enables wired and wireless network connection.", clips[3], toInsert);
+        toInsert = ChangeItem("That's a Network Interface Card (NIC). An NIC is a component inside the computer that enables wired and wireless network connection.", clips[3], toInsert);
         items.Add("NetCard", toInsert);
     }
 
@@ -80,6 +84,8 @@ public class PickupItem : MonoBehaviour
 
     public void GetItem(string itemName)
     {
+        if (!canPickUp)
+            return;
         if (source.isPlaying)
             return;
         Item itemPicked = items[itemName];

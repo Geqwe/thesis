@@ -4,6 +4,7 @@ using Valve.VR;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence() { // Display each sentence
         if(sentences.Count == 0) {
+            dialogueText.text = "";
+            if(SceneManager.GetActiveScene().name.StartsWith("Third"))
+            {
+                PickupItem.instance.canPickUp = true;
+            }
             return;
         }
         line = sentences.Dequeue();

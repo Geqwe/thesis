@@ -127,6 +127,7 @@ public class ChoiceScript : MonoBehaviour
         choice1.text = currQ.choices[0].ans;
         choice2.text = currQ.choices[1].ans;
         choice3.text = currQ.choices[2].ans;
+        //play clip
     }
 
     public void CheckCorrectness(int index)

@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f661c65cf69dc4caf79b4899d82a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPickUp: 0
   level: 2
   clips:
   - {fileID: 8300000, guid: 526033aedfcd8fa4893bd857ca331979, type: 3}
@@ -583,7 +584,7 @@ MonoBehaviour:
       for example.
     - WAN or Wide Area Network is a network of different LANs. Like a university.
       The internet is a network of networks too. Just a very big one.
-    - Now that that's out of the way pick up the components on the desk and I'll
+    - Now that that's out of the way, pick up the components on the desk and I'll
       explain their uses.
 --- !u!114 &964992243
 MonoBehaviour:
@@ -892,6 +893,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587627869405069922, guid: f206aaa9c9f5fd0499dd253391f2fe77,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587627869405069922, guid: f206aaa9c9f5fd0499dd253391f2fe77,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3587627869405149460, guid: f206aaa9c9f5fd0499dd253391f2fe77,
         type: 3}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6481118993758053061}
   - component: {fileID: 6481118993758053059}
   m_Layer: 0
-  m_Name: HDDA
+  m_Name: HDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
