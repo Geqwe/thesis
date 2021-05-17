@@ -20,10 +20,15 @@ public class Mix : MonoBehaviour
     DialogueTrigger[] triggers;
     short index = 1;
 
+    int wrongIndex = 0;
+    public AudioClip[] wrongClips;
+    AudioSource source;
+
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
+        source = GetComponent<AudioSource>();
         triggers = DialogueManager.GetComponents<DialogueTrigger>();
     }
 
@@ -47,7 +52,27 @@ public class Mix : MonoBehaviour
             }
             else
             {
-                //play sound wrong
+                if (wrongIndex == 0)
+                {
+                    source.Stop();
+                    source.clip = wrongClips[0];
+                    source.Play();
+                    wrongIndex = 1;
+                }
+                else if (wrongIndex == 1)
+                {
+                    source.Stop();
+                    source.clip = wrongClips[1];
+                    source.Play();
+                    wrongIndex = 2;
+                }
+                else
+                {
+                    source.Stop();
+                    source.clip = wrongClips[2];
+                    source.Play();
+                    wrongIndex = 0;
+                }
             }
             return;
         }
@@ -77,7 +102,27 @@ public class Mix : MonoBehaviour
             }
             else
             {
-                //play sound wrong
+                if (wrongIndex == 0)
+                {
+                    source.Stop();
+                    source.clip = wrongClips[0];
+                    source.Play();
+                    wrongIndex = 1;
+                }
+                else if (wrongIndex == 1)
+                {
+                    source.Stop();
+                    source.clip = wrongClips[1];
+                    source.Play();
+                    wrongIndex = 2;
+                }
+                else
+                {
+                    source.Stop();
+                    source.clip = wrongClips[2];
+                    source.Play();
+                    wrongIndex = 0;
+                }
             }
             //other.gameObject.SetActive(false);
             return;

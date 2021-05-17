@@ -312,7 +312,7 @@ Transform:
   - {fileID: 1554433318}
   - {fileID: 14569404}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172496093
 GameObject:
@@ -348,7 +348,7 @@ Transform:
   - {fileID: 7605092339021386769}
   - {fileID: 5299666091177196400}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514584304
 GameObject:
@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 514584306}
   - component: {fileID: 514584305}
   - component: {fileID: 514584307}
+  - component: {fileID: 514584308}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -383,10 +384,10 @@ MonoBehaviour:
   canPickUp: 0
   level: 2
   clips:
-  - {fileID: 8300000, guid: 526033aedfcd8fa4893bd857ca331979, type: 3}
-  - {fileID: 8300000, guid: eafd8df4914b6054db2b36a3aa4b4830, type: 3}
-  - {fileID: 8300000, guid: eafd8df4914b6054db2b36a3aa4b4830, type: 3}
-  - {fileID: 8300000, guid: eafd8df4914b6054db2b36a3aa4b4830, type: 3}
+  - {fileID: 8300000, guid: b4798eb2ea78d824b98c31ff15d72dc1, type: 3}
+  - {fileID: 8300000, guid: b131146434a80ce469e290d5cc0dec98, type: 3}
+  - {fileID: 8300000, guid: 039c8f5a16578cc44b0ea17bf7f04269, type: 3}
+  - {fileID: 8300000, guid: ac98fd0be5350b24580bdc3f68109f9b, type: 3}
   adviceText: {fileID: 1008847927}
   btn2: {fileID: 989147695}
 --- !u!4 &514584306
@@ -402,7 +403,7 @@ Transform:
   m_Children:
   - {fileID: 989147696}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &514584307
 AudioSource:
@@ -500,6 +501,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &514584308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514584304}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e8a951c223dc347ba45e0303e9f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    audio:
+    - {fileID: 8300000, guid: aa16ddecc8c98bc4b91725636c8fb00e, type: 3}
+    sentence:
+    - 'Great. Now that we have cleared everything out, it''s time for our quiz.
+
+      Push
+      the True or False button to answer.'
 --- !u!1 &900894623
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +552,7 @@ Transform:
   - {fileID: 71076774}
   - {fileID: 1932578969}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964992241
 GameObject:
@@ -566,13 +587,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
+    - {fileID: 8300000, guid: 088265fd0e04f2d4fa01ee108fb90ddd, type: 3}
+    - {fileID: 8300000, guid: 50eebbd8d5e1a6241866a4a8d46f9fc7, type: 3}
+    - {fileID: 8300000, guid: a309d27ca60ac964f941b331ee8a2851, type: 3}
+    - {fileID: 8300000, guid: 3f5f6024330b22446a5911ce606970ba, type: 3}
+    - {fileID: 8300000, guid: 43dc84d7956f919499a6e77c390a7f14, type: 3}
+    - {fileID: 8300000, guid: 75a60f10b5a3fb94ebf2900b74929664, type: 3}
+    - {fileID: 8300000, guid: aa16ddecc8c98bc4b91725636c8fb00e, type: 3}
     sentence:
     - Look at this view! Magnificent right? Ok let it inspire us, for today we will
       learn about networks! Hit your Grib Button when you're ready.
@@ -611,7 +632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &964992245
 AudioSource:
@@ -709,6 +730,133 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &968437467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968437469}
+  - component: {fileID: 968437468}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &968437468
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968437467}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &968437469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968437467}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 255.56053, y: 10.588347, z: 327.18164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989147695
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +866,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 989147696}
-  - component: {fileID: 989147699}
   - component: {fileID: 989147698}
   - component: {fileID: 989147697}
   m_Layer: 0
@@ -851,26 +998,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quizText: {fileID: 1429685943}
---- !u!114 &989147699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989147695}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e8a951c223dc347ba45e0303e9f3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    audio:
-    - {fileID: 8300000, guid: e3148a98a2496e64cb8712177bbcde71, type: 3}
-    sentence:
-    - 'Great. Now that we have cleared everything out, it''s time for our quiz.
-
-      Push
-      the True or False button to answer.'
+  clips:
+  - {fileID: 8300000, guid: 94426063ca1e1144bad9c6857fd7fad2, type: 3}
+  - {fileID: 8300000, guid: 719e0c3e56ca1e24384f1790793d3748, type: 3}
+  - {fileID: 8300000, guid: 948fb8d3ff88b1042a3b04638839598e, type: 3}
+  - {fileID: 8300000, guid: 8de69cdc24c6da843968a8140bf2cc8c, type: 3}
+  - {fileID: 8300000, guid: 1514ed7828b59e24b80c9be27c4ea297, type: 3}
+  - {fileID: 8300000, guid: 99743e4984aa54c4582205d23cf178bb, type: 3}
+  - {fileID: 8300000, guid: f29d24a625ea92840b627b0a83a54b05, type: 3}
+  - {fileID: 8300000, guid: 9bf2d39bb53ae6b4e939ffe29b0fb49b, type: 3}
+  - {fileID: 8300000, guid: 6581a7d04d7597a4bb90b86f23332fea, type: 3}
+  sfxSource: {fileID: 968437468}
+  wrong: {fileID: 8300000, guid: 13a0324d745ace34b87413b2fb847211, type: 3}
+  correct: {fileID: 8300000, guid: 9bd4e625f9bd8a845847a45bb0288ff8, type: 3}
+  ending: {fileID: 8300000, guid: cf6e08a7b4a930442ba932de6ab4ebee, type: 3}
 --- !u!1001 &1008847925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,7 +1265,7 @@ PrefabInstance:
     - target: {fileID: 1573683476814268334, guid: 7851ef5885258b54b809c5cb67cab857,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1573683476814268334, guid: 7851ef5885258b54b809c5cb67cab857,
         type: 3}
@@ -1507,7 +1648,7 @@ PrefabInstance:
     - target: {fileID: 7715410290099246479, guid: 96aae28771c125b418d55d0da83afbda,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7715410290099246479, guid: 96aae28771c125b418d55d0da83afbda,
         type: 3}
@@ -1777,7 +1918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3601,7 +3742,7 @@ Transform:
   - {fileID: 7739395262665392536}
   - {fileID: 543450653338135750}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &543450653338135750
 Transform:
@@ -9390,7 +9531,7 @@ Transform:
   - {fileID: 1719099455347870377}
   - {fileID: 8307523912775534901}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2956223916538140004
 MeshRenderer:

@@ -14,7 +14,7 @@ public class VRInputModule : BaseInputModule
     protected override void Awake()
     {
         base.Awake();
-        Debug.Log(m_Data);
+        //Debug.Log(m_Data);
         m_Data = new PointerEventData(eventSystem);
     }
 
@@ -22,7 +22,7 @@ public class VRInputModule : BaseInputModule
     {
         m_Data.Reset();
         m_Data.position = new Vector2(m_Camera.pixelWidth / 2, m_Camera.pixelHeight / 2);
-        Debug.Log(m_Data.position);
+        //Debug.Log(m_Data.position);
         eventSystem.RaycastAll(m_Data, m_RaycastResultCache);
         m_Data.pointerCurrentRaycast = FindFirstRaycast(m_RaycastResultCache);
         m_CurrentObject = m_Data.pointerCurrentRaycast.gameObject;
@@ -45,7 +45,7 @@ public class VRInputModule : BaseInputModule
 
     private void ProcessPress(PointerEventData data)
     {
-        Debug.Log("press");
+        //Debug.Log("press");
         data.pointerCurrentRaycast = data.pointerCurrentRaycast;
 
         GameObject newPointerPress = ExecuteEvents.ExecuteHierarchy(m_CurrentObject, data, ExecuteEvents.pointerDownHandler);
@@ -60,7 +60,7 @@ public class VRInputModule : BaseInputModule
 
     private void ProcessRelease(PointerEventData data)
     {
-        Debug.Log("release");
+        //Debug.Log("release");
         ExecuteEvents.Execute(data.pointerPress, data, ExecuteEvents.pointerUpHandler);
 
         GameObject pointerUpHandler = ExecuteEvents.GetEventHandler<IPointerClickHandler>(m_CurrentObject);

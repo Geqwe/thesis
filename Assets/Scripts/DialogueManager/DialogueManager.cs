@@ -60,7 +60,9 @@ public class DialogueManager : MonoBehaviour
 
     void TypeSentence(Line line) { // if you want you can type each letter at once for effect (send to me on how to do that)
         dialogueText.text = line.sentence;
-        source.PlayOneShot(line.audio);
+        source.Stop();
+        source.clip = line.audio;
+        source.Play();
     }
 
     void Update()

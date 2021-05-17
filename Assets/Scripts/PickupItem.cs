@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +30,6 @@ public class PickupItem : MonoBehaviour
     Dictionary<string, Item> items = new Dictionary<string, Item>();
     AudioSource source;
 
-    // Start is called before the first frame update
     void Awake()
     {
         instance = this;
@@ -86,11 +86,14 @@ public class PickupItem : MonoBehaviour
     {
         if (!canPickUp)
             return;
-        if (source.isPlaying)
-            return;
+
         Item itemPicked = items[itemName];
         adviceText.text = itemPicked.description;
-        //play clip if there was a previous add it to queue
+
+        source.Stop();
+        source.clip = itemPicked.clip;
+        source.Play();
+
         if(!itemPicked.visited)
         {
             itemPicked.visited = true;
@@ -98,7 +101,15 @@ public class PickupItem : MonoBehaviour
             if(allVisited==items.Count)
             {
                 btn2.SetActive(true);
+                canPickUp = false;
+                StartCoroutine(ShowButton());
             }
         }
+    }
+
+    IEnumerator ShowButton()
+    {
+        yield return new WaitForSeconds(13f);
+        GetComponent<DialogueTrigger>().enabled = true;
     }
 }

@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &149234488
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -646,13 +646,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149234487}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 1.3173234, y: 2.77, z: 0.23317426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984500643}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
 --- !u!1001 &154501969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1231,6 +1231,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 177607030}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &186919101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186919103}
+  - component: {fileID: 186919102}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &186919102
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186919101}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e7a1c20e1504a4e43bfa09d005865fda, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &186919103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186919101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &232928296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1272,7 +1399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1595,7 +1722,7 @@ Transform:
   - {fileID: 1007986776}
   - {fileID: 1531586309}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &292363122
 PrefabInstance:
@@ -4311,7 +4438,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &688391495
 MonoBehaviour:
@@ -4340,21 +4467,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
-    - {fileID: 8300000, guid: c848d318c783da14d920cdb75f1ee7ac, type: 3}
-    - {fileID: 8300000, guid: 07052560d042e0e4ba61076ebb2e1b94, type: 3}
-    - {fileID: 8300000, guid: 62bdcbc5f3d6b3f43844cc7b849f0448, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
-    - {fileID: 8300000, guid: c9b9c3bb824daba4b9cb39713cd412a6, type: 3}
+    - {fileID: 8300000, guid: c811c7280a99db043b9580cff316be34, type: 3}
+    - {fileID: 8300000, guid: 1aef57d4cb7e98b42af9ba11abd8e70c, type: 3}
+    - {fileID: 8300000, guid: 657c3ed2494683b46a875b2fbb5bb2d8, type: 3}
+    - {fileID: 8300000, guid: 6d3d4871bb4c1e94c8c8b0a3009e0d1f, type: 3}
+    - {fileID: 8300000, guid: fb1e985ff96c0dc4fac188443eb81442, type: 3}
+    - {fileID: 8300000, guid: da8714f96dd9ad5498546e88ab3edd46, type: 3}
+    - {fileID: 8300000, guid: ab92573a8557dc540b08b8b8ccbf1362, type: 3}
+    - {fileID: 8300000, guid: 8d803cf9b96775d48bfdb3b47f6db4b8, type: 3}
+    - {fileID: 8300000, guid: dd90b53139ec2fb4697f0cf3dceac679, type: 3}
+    - {fileID: 8300000, guid: 709cc1e6c55b6e2449a725687533ede7, type: 3}
+    - {fileID: 8300000, guid: dd199f367a3c9744989c2e572656462e, type: 3}
+    - {fileID: 8300000, guid: 79839d0d0f0f19f488b8f96d75a62669, type: 3}
+    - {fileID: 8300000, guid: 444c3b44ec09ee149848b26514d55ac4, type: 3}
+    - {fileID: 8300000, guid: 75de2bb93d5ddbc45b59dfd52c01e4dd, type: 3}
+    - {fileID: 8300000, guid: 12f7fb8153158164faeb0591b01833c0, type: 3}
     sentence:
     - "Alright! So, in this lesson, we're going to learn what an algorithm is and
       its critical elements. \n\nPress the Grip Button on your controller to move
@@ -4456,10 +4583,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
-    - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
-    - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
-    - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
+    - {fileID: 8300000, guid: 56d82dea026f3c44e9445bd77f09f581, type: 3}
+    - {fileID: 8300000, guid: 4098f76ce0453ed4a84c9835e8f955a8, type: 3}
+    - {fileID: 8300000, guid: 18c9f5efc236f1442805deb9ba4056d8, type: 3}
+    - {fileID: 8300000, guid: 20229c2807ca09346b75bb0cf294b4d7, type: 3}
     sentence:
     - Awesome. Now we'll take a look at loop statements.
     - 'Loop statements, as the name suggests, are the ones that will be called repeatedly,
@@ -4487,10 +4614,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: 46bb1e3e014c28740ae8c96427da5270, type: 3}
-    - {fileID: 8300000, guid: 46bb1e3e014c28740ae8c96427da5270, type: 3}
-    - {fileID: 8300000, guid: 46bb1e3e014c28740ae8c96427da5270, type: 3}
-    - {fileID: 8300000, guid: 46bb1e3e014c28740ae8c96427da5270, type: 3}
+    - {fileID: 8300000, guid: 75273a00bf2a0e14f850f496373c53f4, type: 3}
+    - {fileID: 8300000, guid: 5754f4219dbb6db45911efee52a3d5e4, type: 3}
+    - {fileID: 8300000, guid: 5bcedc9def88df1439a54b1df492b585, type: 3}
+    - {fileID: 8300000, guid: 3ce568ad9720cad4ebb2b6927f9cfbfb, type: 3}
     sentence:
     - Nice job! Another loop statement that we will learn about is the 'For Loop'.
     - 'The For Loop tells us that a statement is to be executed for a certain amount
@@ -4522,7 +4649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: 4bb527c4eb5b08c44b8d24a14a6ab3ce, type: 3}
+    - {fileID: 8300000, guid: 2ad691cae2cd7374eba5f07cc4bf8a6b, type: 3}
     sentence:
     - Great! Now we have put everything we need in the mix. Now it's time to renew
       the bowl and get ready for your test.
@@ -4540,7 +4667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
+    - {fileID: 8300000, guid: b659dbeca28ea6941a66df61ac0e518b, type: 3}
     sentence:
     - 'After the salt, we need to put our next ingredient. This will make our pancakes
       nice and juicy.
@@ -4574,8 +4701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: 716aaae09f0c5774a972f0bacd5e5e22, type: 3}
-    - {fileID: 8300000, guid: 716aaae09f0c5774a972f0bacd5e5e22, type: 3}
+    - {fileID: 8300000, guid: 58af3fb0deb1e2a4fa1c7d4a2285fb0a, type: 3}
+    - {fileID: 8300000, guid: 2e0e206048bf4594d99b97bd0b1da045, type: 3}
     sentence:
     - 'Great! Now we have put everything we need in the mix. Now it''s time to get
       ready for your test.
@@ -4619,7 +4746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: e3148a98a2496e64cb8712177bbcde71, type: 3}
+    - {fileID: 8300000, guid: 1d8b345c67eb819439bb2b216474dac2, type: 3}
     sentence:
     - 'And now we must break some eeeggs!
 
@@ -4653,7 +4780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
-    - {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277, type: 3}
+    - {fileID: 8300000, guid: 90b1cc5ac306b4f499303bf63ff630a6, type: 3}
     sentence:
     - Very well! That was it for today ladies and gentlemen, I hope you make those
       pancakes yourself! Let's move to another show!
@@ -5422,7 +5549,7 @@ PrefabInstance:
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7648999437514811429, guid: d050ea88e9bbe074f99b8fe6abba09dd,
         type: 3}
@@ -6118,7 +6245,7 @@ Transform:
   - {fileID: 617111857}
   - {fileID: 303528017}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &988756873
 PrefabInstance:
@@ -8457,7 +8584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4300834670307708, guid: 29e4c4f9364658346b148d054660b7f3, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4300834670307708, guid: 29e4c4f9364658346b148d054660b7f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9103,6 +9230,10 @@ MonoBehaviour:
   spotLight: {fileID: 1065128590}
   waitingMilk: 0
   DialogueManager: {fileID: 688391493}
+  wrongClips:
+  - {fileID: 8300000, guid: 2a5307593d42efe43821fdbcf3394993, type: 3}
+  - {fileID: 8300000, guid: 6f342f008435fe346a9b7006383457dd, type: 3}
+  - {fileID: 8300000, guid: 8ff811f9e9aa3574a838275d79d7d5c1, type: 3}
 --- !u!1001 &1895613825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16395,7 +16526,7 @@ Transform:
   m_Children:
   - {fileID: 1337878750006048613}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847132026915672738
 GameObject:
@@ -17905,7 +18036,7 @@ Transform:
   m_Children:
   - {fileID: 8724603324086925312}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2189088890723886429
 GameObject:
@@ -18526,7 +18657,7 @@ PrefabInstance:
     - target: {fileID: 6617928514325688639, guid: c3cf067aa307b0f43a20223425fa1a92,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6617928514325688639, guid: c3cf067aa307b0f43a20223425fa1a92,
         type: 3}
@@ -27803,7 +27934,7 @@ Transform:
   - {fileID: 783934022}
   - {fileID: 9044824597501207552}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 86.663, z: 0}
 --- !u!23 &4912738844997318912
 MeshRenderer:
@@ -32868,7 +32999,7 @@ Transform:
   - {fileID: 404381790}
   - {fileID: 30811975}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6272783340358537485
 GameObject:

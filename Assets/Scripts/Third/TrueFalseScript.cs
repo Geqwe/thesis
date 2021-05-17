@@ -10,10 +10,12 @@ public class TrueFalseScript : MonoBehaviour
     {
         public string query;
         public bool correctness;
-        public Query(string q, bool correct)
+        public AudioClip clip;
+        public Query(string q, bool correct, AudioClip cli)
         {
             query = q;
             correctness = correct;
+            clip = cli;
         }
     }
 
@@ -22,6 +24,9 @@ public class TrueFalseScript : MonoBehaviour
 
     public Text quizText;
     AudioSource source;
+    public AudioClip[] clips;
+    public AudioSource sfxSource;
+    public AudioClip wrong, correct, ending;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,15 +44,15 @@ public class TrueFalseScript : MonoBehaviour
 
     void InitQuestions()
     {
-        questions.Add(new Query("If two devices are connected to the same Switch then they are in the same LAN (Local Area Network).", true));
-        questions.Add(new Query("The internet is not a network.", false));
-        questions.Add(new Query("A router handles the routing of data between networks.", true));
-        questions.Add(new Query("The internet is a Local Area Network (LAN).", false));
-        questions.Add(new Query("A computer needs a Network Interface Card (NIC) in order to connect to networks.", true));
-        questions.Add(new Query("If two devices are connected to the same Access Point, then they are in the same LAN(Local Area Network).", true));
-        questions.Add(new Query("Routers today tend to work as Access Points as well.", true));
-        questions.Add(new Query("A computer can connect with and without a wire to a network if they DO NOT have a Network Interface Card(NIC).", false));
-        questions.Add(new Query("Wireless connection is possible through electromagnetic waves.", true));
+        questions.Add(new Query("If two devices are connected to the same Switch then they are in the same LAN (Local Area Network).", true, clips[0]));
+        questions.Add(new Query("The internet is not a network.", false, clips[1]));
+        questions.Add(new Query("A router handles the routing of data between networks.", true, clips[2]));
+        questions.Add(new Query("The internet is a Local Area Network (LAN).", false, clips[3]));
+        questions.Add(new Query("A computer needs a Network Interface Card (NIC) in order to connect to networks.", true, clips[4]));
+        questions.Add(new Query("If two devices are connected to the same Access Point, then they are in the same LAN(Local Area Network).", true, clips[5]));
+        questions.Add(new Query("Routers today tend to work as Access Points as well.", true, clips[6]));
+        questions.Add(new Query("A computer can connect with and without a wire to a network if they DO NOT have a Network Interface Card(NIC).", false, clips[7]));
+        questions.Add(new Query("Wireless connection is possible through electromagnetic waves.", true, clips[8]));
         NextQuestion();
     }
 
@@ -68,17 +73,20 @@ public class TrueFalseScript : MonoBehaviour
         if(questions.Count==1)
         {
             quizText.text = "Very Well! Good job! That would be all for this lesson.";
+            source.Stop();
+            source.clip = ending;
+            source.Play();
             StartCoroutine(End());
             return;
         }
-        //play sound
+        sfxSource.PlayOneShot(correct);
         questions.Remove(currQuery);
         NextQuestion();
     }
 
     void Wrong()
     {
-        //play sound
+        sfxSource.PlayOneShot(wrong);
         NextQuestion();
     }
 
@@ -87,6 +95,9 @@ public class TrueFalseScript : MonoBehaviour
         int rand = Random.Range(0, questions.Count - 1);
         currQuery = questions[rand];
         quizText.text = currQuery.query;
+        source.Stop();
+        source.clip = currQuery.clip;
+        source.Play();
     }
 
     IEnumerator End()

@@ -19,10 +19,17 @@ public class TestManager : MonoBehaviour
     public Text hint;
     public Text errors;
 
+    public AudioClip[] clips;
+    AudioSource source;
+
+    int wrongIndex = 0;
+    public AudioClip[] wrongClips;
+
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
+        source = GetComponent<AudioSource>();
         StartCoroutine(FirstItem());
     }
 
@@ -34,6 +41,9 @@ public class TestManager : MonoBehaviour
             return;
         }
         hint.text = hints[index];
+        source.Stop();
+        source.clip = clips[index];
+        source.Play();
         neededObj = items[index++];
     }
 
@@ -45,6 +55,21 @@ public class TestManager : MonoBehaviour
         {
             GameOver();
             return;
+        }
+
+        if(wrongIndex==0)
+        {
+            source.Stop();
+            source.clip = wrongClips[0];
+            source.Play();
+            wrongIndex = 1;
+        }
+        else
+        {
+            source.Stop();
+            source.clip = wrongClips[1];
+            source.Play();
+            wrongIndex = 0;
         }
         wrongAnswers--;
         errors.text = wrongAnswers.ToString();
@@ -59,7 +84,7 @@ public class TestManager : MonoBehaviour
 
     IEnumerator FirstItem()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         NextItem();
     }
 
